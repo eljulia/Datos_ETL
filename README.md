@@ -205,7 +205,7 @@ Data warehouse destino (`dw_netflix`) con esquema de estrella:
 ## Requisitos Previos
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y en ejecucion
-- [Python 3.11+](https://www.python.org/downloads/) instalado
+- [Python 3.11 o + ](https://www.python.org/downloads/) instalado
 - Entorno virtual creado en `ETL/venv/`
 
 ---
