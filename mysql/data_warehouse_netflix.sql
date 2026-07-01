@@ -31,7 +31,7 @@ CREATE TABLE FactWatchs (
 
 	userID INTEGER,
     movieID VARCHAR(8),
-    rating DECIMAL(2,1),
+    rating DECIMAL(2,1), 
     timestamp  timestamp,
     
     /* CREANDO LAS REALACIONES*/

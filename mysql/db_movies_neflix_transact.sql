@@ -27,36 +27,37 @@ INSERT INTO person VALUES ("72129839","Joseph Chavez Pineda","1997-04-12"),
                              ("20432364","Maria Alejandra Navarro","1967-01-05");
 
 
-#CREAMOS LA TABLA Participant
+/* CREAMOS LA TABLA Participant */
 CREATE TABLE participant (
 	movieId VARCHAR(8) PRIMARY KEY NOT NULL,
-    personId VARCHAR(8),
-    participantRole VARCHAR(30),
+  personId VARCHAR(8),
+  participantRole VARCHAR(30),
     
-     CONSTRAINT fk_movie_participant FOREIGN KEY (movieId) REFERENCES movie (movieID),
-     CONSTRAINT fk_movie_person FOREIGN KEY (personId) REFERENCES person (personId)
+  CONSTRAINT fk_movie_participant FOREIGN KEY (movieId) REFERENCES movie (movieID),
+  CONSTRAINT fk_movie_person FOREIGN KEY (personId) REFERENCES person (personId)
+
 );
 
-# insertando valores a la tabla participant
+/* insertando valores a la tabla participant */
 INSERT INTO participant VALUES 	("80192187","72129839","Actor"),
 								("81157374","73235434","Director"),
 								("80210920","20432364","Actor");
 
 
 
-## CREANDO LA TABLA Gender
+/*  CREANDO LA TABLA Gender */
 CREATE TABLE gender (
   genderId INTEGER PRIMARY KEY NOT NULL,
   name VARCHAR(100) NOT NULL
 );
 
-# insertamos valores a la Gender
+/* insertamos valores a la Gender */
 INSERT INTO gender VALUES (1,"Action"),
-							(2,"Adventure"),
-                            (3,"Drama");
+							            (2,"Adventure"),
+                          (3,"Drama");
                             
 
-## creamos la tabla moview_gender
+/* creamos la tabla moview_gender */
 CREATE TABLE movie_gender (
   movieId varchar(8) PRIMARY KEY NOT NULL,
   genderId INTEGER,
@@ -65,7 +66,5 @@ CREATE TABLE movie_gender (
 	CONSTRAINT fk_Movie_Gender_Gender FOREIGN KEY (genderId) REFERENCES gender (genderId)
 );
 
-#insertamos valores a la tabla moview_gender
-INSERT INTO movie_gender VALUES ("80192187",1),
-							("81157374",2),
-                            ("80210920",3);
+/* insertamos valores a la tabla moview_gender */
+INSERT INTO movie_gender VALUES ("80192187",1), ("81157374",2), ("80210920",3);
